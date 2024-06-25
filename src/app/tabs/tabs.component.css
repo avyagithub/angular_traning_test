@@ -1,0 +1,21 @@
+.tab-container {
+    display: flex;
+}
+.tab {
+    background-color: #5c6698;
+    padding: 5px 10px;
+    color: #fff;
+    margin-right: 3px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+.tab span{
+    display: inline-block;
+    margin-right: 10px;
+}
+.closebtn{
+    background: transparent;
+    color: #fff;
+    border: 0px;
+}

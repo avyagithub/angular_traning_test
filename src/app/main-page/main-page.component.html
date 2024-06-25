@@ -1,0 +1,10 @@
+<div class="container-fluid">
+
+  <app-zipcode-entry> </app-zipcode-entry>
+  <!-- (tabChange)="onTabChange($event)" (tabClose)="onTabClose($event)" -->
+  <app-tabs [tabs]="tabs" (tabChange)="onTabChange($event)" (tabClose)="onTabClose($event)" >
+    <app-current-conditions [selectedIndex]="selectedtab"></app-current-conditions>
+  </app-tabs>
+  
+
+</div>

@@ -1,0 +1,68 @@
+import { AfterContentChecked, Component, inject, Input, Signal } from '@angular/core';
+import { WeatherService } from "../weather.service";
+import { LocationService } from "../location.service";
+import { Router } from "@angular/router";
+import { ConditionsAndZip } from '../conditions-and-zip.type';
+
+
+@Component({
+  selector: 'app-current-conditions',
+  templateUrl: './current-conditions.component.html',
+  styleUrls: ['./current-conditions.component.css']
+})
+export class CurrentConditionsComponent implements AfterContentChecked {
+
+
+  @Input() selectedIndex: number
+
+
+  private weatherService = inject(WeatherService);
+  private router = inject(Router);
+  protected locationService = inject(LocationService);
+  protected currentConditionsByZip: Signal<ConditionsAndZip[]> = this.weatherService.getCurrentConditions();
+
+  displayContent = [];
+
+
+
+  showForecast(zipcode: string) {
+    this.router.navigate(['/forecast', zipcode])
+  }
+
+  constructor() {
+
+    console.log("Tabs-Data", this.currentConditionsByZip())
+
+
+
+
+
+
+
+
+  }
+
+  ngAfterContentChecked(): void {
+    this.displayContent = [];
+    this.displayContent = this.currentConditionsByZip();
+    this.displayContent = Array.from(new Set(this.displayContent.map(a => a.zip)))
+      .map(id => {
+        return this.displayContent.find(a => a.zip === id)
+      })
+
+
+
+    this.displayContent = this.displayContent.filter((x) => x.zip == this.selectedIndex)
+    const location = localStorage.getItem('locations')
+    console.log("Location", JSON.parse(location).length)
+    if (JSON.parse(location).length < 1) {
+      this.displayContent = []
+    }
+    console.log("Display Content", this.displayContent)
+
+
+  }
+
+
+
+}

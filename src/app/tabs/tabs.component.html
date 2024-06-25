@@ -1,0 +1,15 @@
+<div class="tab-container">
+    <ng-container *ngFor="let tabdata of tabs ; let i = index" >
+      <div class="tab" [class.active]="i === tabselectedInd">
+        <span (click)="selectTab(tabdata,i)">{{ tabdata.name }}</span>
+        <button class="closebtn" (click)="closeTab(i)">X</button>
+      </div>
+    </ng-container>
+    </div>
+    <div >
+      <div class="tab-content">
+      <ng-content></ng-content>
+      </div> 
+    </div>
+
+  
