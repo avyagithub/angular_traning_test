@@ -31,7 +31,7 @@ export class CurrentConditionsComponent implements AfterContentChecked {
 
   constructor() {
 
-    console.log("Tabs-Data", this.currentConditionsByZip())
+    
 
 
 
@@ -54,11 +54,11 @@ export class CurrentConditionsComponent implements AfterContentChecked {
 
     this.displayContent = this.displayContent.filter((x) => x.zip == this.selectedIndex)
     const location = localStorage.getItem('locations')
-    console.log("Location", JSON.parse(location).length)
+    
     if (JSON.parse(location).length < 1) {
       this.displayContent = []
     }
-    console.log("Display Content", this.displayContent)
+    
 
 
   }

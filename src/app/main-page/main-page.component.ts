@@ -37,16 +37,16 @@ export class MainPageComponent implements OnInit {
       });
     });
 
-    this.weatherService.dataWeather.subscribe( (data: any) => {
-      console.log("Behave", data)
-      
-       this.tabs.map((dataTab) => {
+    this.weatherService.dataWeather.subscribe((data: any) => {
+
+
+      this.tabs.map((dataTab) => {
         if (dataTab.zip == data.zip) {
           dataTab.name = data.data?.name
         }
 
       })
-      
+
       this.onTabChange(data)
 
     })
@@ -54,18 +54,18 @@ export class MainPageComponent implements OnInit {
   }
 
 
- 
+
 
 
 
   onTabChange(selectedTabData: Object) {
-    console.log("Data selected tab", selectedTabData)
+
     this.selectedtab = selectedTabData['zip'];
   }
 
   onTabClose(index: number) {
     this.locationService.removeLocation(this.tabs[index].zip);
-   
+
 
   }
 

@@ -30,7 +30,6 @@ export class CachedDataService {
     const cachDataObject=localStorage.getItem(key)
     if (!cachDataObject) return null;     
     const {dataWeather,expiry}=JSON.parse(cachDataObject)
-    console.log('Cashed-Object',dataWeather)
     if (new Date().getTime() > expiry) {
       localStorage.removeItem(key);
       return null;
