@@ -55,7 +55,8 @@ export class CurrentConditionsComponent implements AfterContentChecked {
     this.displayContent = this.displayContent.filter((x) => x.zip == this.selectedIndex)
     const location = localStorage.getItem('locations')
     
-    if (JSON.parse(location).length < 1) {
+    
+    if (JSON.parse(location)!=null && JSON.parse(location).length < 1) {
       this.displayContent = []
     }
     
