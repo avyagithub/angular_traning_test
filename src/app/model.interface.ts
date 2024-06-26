@@ -42,15 +42,15 @@ export interface weatherData {
   }
   
   export interface Clouds {
-    all: number
+    all: number|string
   }
   
   export interface Sys {
-    type: number
-    id: number
+    type: number|string
+    id: number|string
     country: string
-    sunrise: number
-    sunset: number
+    sunrise: number|string
+    sunset: number|string
   }
   export interface tabs { 
     title:string, 
