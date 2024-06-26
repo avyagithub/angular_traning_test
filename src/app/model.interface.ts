@@ -57,3 +57,8 @@ export interface weatherData {
     zip:string, 
     name: string
    }
+
+ export interface weatherDataBeSubject{
+    zip:number|string,
+    data:weatherData
+ }  

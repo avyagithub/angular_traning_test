@@ -3,7 +3,7 @@ import { ConditionsAndZip } from 'app/conditions-and-zip.type';
 import { LocationService } from 'app/location.service';
 import { WeatherService } from 'app/weather.service';
 
-import { tabs } from '../model.interface'
+import { tabs, weatherDataBeSubject } from '../model.interface'
 
 
 @Component({
@@ -40,9 +40,9 @@ export class MainPageComponent implements OnInit {
       });
     });
 
-    this.weatherService.dataWeather.subscribe((data: any) => {
+    this.weatherService.dataWeather.subscribe((data: weatherDataBeSubject) => {
 
-
+      // console.log("Any",JSON.stringify)
       this.tabs.map((dataTab) => {
         if (dataTab.zip == data.zip) {
           dataTab.name = data.data?.name
@@ -61,7 +61,7 @@ export class MainPageComponent implements OnInit {
 
 
 
-  onTabChange(selectedTabData: Object) {
+  onTabChange(selectedTabData: tabs|weatherDataBeSubject) {
 
     this.selectedtab = selectedTabData['zip'];
   }

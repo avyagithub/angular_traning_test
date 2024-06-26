@@ -6,7 +6,7 @@ import { ConditionsAndZip } from './conditions-and-zip.type';
 import { Forecast } from './forecasts-list/forecast.type';
 import { CachedDataService } from './cached-data.service';
 import { catchError, map, tap } from 'rxjs/operators';
-
+import { weatherDataBeSubject } from './model.interface' 
 @Injectable()
 export class WeatherService {
 
@@ -14,7 +14,7 @@ export class WeatherService {
   static APPID = '5a4b2d457ecbef9eb2a71e480b947604';
   static ICON_URL = 'https://raw.githubusercontent.com/udacity/Sunshine-Version-2/sunshine_master/app/src/main/res/drawable-hdpi/';
   private currentConditions = signal<ConditionsAndZip[]>([]);
-  public dataWeather:any=new BehaviorSubject([])
+  public dataWeather:BehaviorSubject<weatherDataBeSubject|any>=new BehaviorSubject([])
 
   
   constructor(private http: HttpClient, private cacheService: CachedDataService) { }

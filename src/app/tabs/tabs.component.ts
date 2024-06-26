@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ConditionsAndZip } from 'app/conditions-and-zip.type';
 import { Forecast } from 'app/forecasts-list/forecast.type';
 import { LocationService } from 'app/location.service';
+import { tabs } from 'app/model.interface';
 import { WeatherService } from 'app/weather.service';
 
 @Component({
@@ -23,12 +24,12 @@ export class TabsComponent implements OnInit {
 
 
   @Input() tabs: any[] = [];
-  @Input() selectedIndex: number = 0;
+  @Input() selectedIndex: number=0;
   @Input() removeTabIndex:number
 
 
   tabselectedInd=0
-  @Output() tabChange = new EventEmitter<number>();
+  @Output() tabChange = new EventEmitter<tabs>();
   @Output() tabClose = new EventEmitter<number>();
 
 
@@ -40,9 +41,10 @@ export class TabsComponent implements OnInit {
 
   
 
-  selectTab(data:any,index) {
+  selectTab(data:tabs,index) {
+    console.log("Selected tab",data)
     // this.selectedIndex=index
-    this.selectedIndex = data;
+    // this.selectedIndex = data;
     this.tabselectedInd=index
     this.tabChange.emit(data);
   }
