@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import {weatherData } from './model.interface'
 @Injectable({
   providedIn: 'root'
 })
@@ -11,11 +11,11 @@ export class CachedDataService {
 
   constructor() { }
  
-  setItem(key:string,data:any,duration:number=this.durationCached){
+  setItem(key:string,data:weatherData,duration:number=this.durationCached){
 
     // calculate expiry
     const expiryTime=new Date().getTime()+duration
-
+    console.log("Set Item",JSON.stringify(data))
     const cachDataObject={
       dataWeather:data,
       expiry:expiryTime

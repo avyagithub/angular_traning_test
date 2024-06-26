@@ -3,12 +3,15 @@ import { ConditionsAndZip } from 'app/conditions-and-zip.type';
 import { LocationService } from 'app/location.service';
 import { WeatherService } from 'app/weather.service';
 
+import { tabs } from '../model.interface'
+
+
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html'
 })
 export class MainPageComponent implements OnInit {
-  tabs: any[] = [];
+  tabs: tabs[] = [];
   selectedtab: Object = {
     name: '',
     zip: '',
