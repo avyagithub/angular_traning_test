@@ -15,7 +15,7 @@ export class CachedDataService {
 
     // calculate expiry
     const expiryTime=new Date().getTime()+duration
-    console.log("Set Item",JSON.stringify(data))
+    // console.log("Set Item",JSON.stringify(data))
     const cachDataObject={
       dataWeather:data,
       expiry:expiryTime

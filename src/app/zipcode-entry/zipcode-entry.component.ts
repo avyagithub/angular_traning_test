@@ -25,7 +25,7 @@ export class ZipcodeEntryComponent {
 
   addLocation(zipcode: string) {
     this.showError = false
-    console.log(this.myTestDiv.nativeElement.value)
+    // console.log(this.myTestDiv.nativeElement.value)
     let checkValue = this.myTestDiv.nativeElement.value
     if (checkValue.trim() == '') {
       this.showError = true

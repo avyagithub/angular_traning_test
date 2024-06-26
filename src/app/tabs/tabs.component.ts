@@ -42,7 +42,7 @@ export class TabsComponent implements OnInit {
   
 
   selectTab(data:tabs,index) {
-    console.log("Selected tab",data)
+    // console.log("Selected tab",data)
     // this.selectedIndex=index
     // this.selectedIndex = data;
     this.tabselectedInd=index
