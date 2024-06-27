@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1719424011634,
+  "timestamp": 1719477350768,
   "index": "https://avyagithub.github.io/angular_traning_test/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://avyagithub.github.io/angular_traning_test/favicon.ico",
         "https://avyagithub.github.io/angular_traning_test/index.html",
-        "https://avyagithub.github.io/angular_traning_test/main.730cf6574de81c0e.js",
+        "https://avyagithub.github.io/angular_traning_test/main.4e32ae9c6f9451fc.js",
         "https://avyagithub.github.io/angular_traning_test/polyfills.4eb0e12b74077764.js",
         "https://avyagithub.github.io/angular_traning_test/runtime.8ec97a0ffe2636bf.js",
         "https://avyagithub.github.io/angular_traning_test/styles.62da56fab7c23777.css"
@@ -66,8 +66,8 @@
     "https://avyagithub.github.io/angular_traning_test/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://avyagithub.github.io/angular_traning_test/assets/weather.json": "5ce53747ac7b830cab8740514bba77459926438a",
     "https://avyagithub.github.io/angular_traning_test/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://avyagithub.github.io/angular_traning_test/index.html": "8def2d3ffa0683d03eac8045b3e1af11976f84c7",
-    "https://avyagithub.github.io/angular_traning_test/main.730cf6574de81c0e.js": "f2ed4e0de1400c8fb24abf10dce4f6b7daff98d0",
+    "https://avyagithub.github.io/angular_traning_test/index.html": "8634587966babe3093dfd6f05930988aa6bdd394",
+    "https://avyagithub.github.io/angular_traning_test/main.4e32ae9c6f9451fc.js": "282803234318c84fb695e65c77233f46b5b4be03",
     "https://avyagithub.github.io/angular_traning_test/polyfills.4eb0e12b74077764.js": "76998cd515d460b2fa554a7cb3d9be556ebb7853",
     "https://avyagithub.github.io/angular_traning_test/runtime.8ec97a0ffe2636bf.js": "b2f1671c077760a4b0bac09ad76c6e9e9749cc2b",
     "https://avyagithub.github.io/angular_traning_test/styles.62da56fab7c23777.css": "c54110b93e86a53798e788d07bf736e419d2c9d8"
