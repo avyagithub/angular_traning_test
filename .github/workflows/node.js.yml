@@ -1,6 +1,5 @@
 name: Angular Build
 
-# {1}
 on:
   push:
     branches: [ "test_branch_code" ]
@@ -13,14 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        node-version: [20] # Ensure this version is correct
     steps:
-      # {2}
       - name: Checkout the source code
         uses: actions/checkout@v3
 
-      # {3}
+      - name: Print Node.js version (Debug)
+        run: echo "Setting up Node.js version ${{ matrix.node-version }}"
+
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -28,12 +27,14 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
-      # {4}
+      - name: Print Node.js version (Debug)
+        run: node --version
+
       - name: Install dependencies
         run: npm install
-      # {5}
+
       - name: Run tests
         run: npm run test
-      # {6}
+
       - name: Build
         run: npm run build
