@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewChecked, Component, OnInit, Signal } from '@angular/core';
+import { Component, OnInit, Signal } from '@angular/core';
 import { ConditionsAndZip } from 'app/conditions-and-zip.type';
 import { LocationService } from 'app/location.service';
 import { WeatherService } from 'app/weather.service';
@@ -20,7 +20,7 @@ export class MainPageComponent implements OnInit {
 
   protected currentConditionsByZip: Signal<ConditionsAndZip[]> = this.weatherService.getCurrentConditions();
 
-  public displayContent = []
+  
 
 
   constructor(private locationService: LocationService, private weatherService: WeatherService,) { }

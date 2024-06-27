@@ -14,7 +14,7 @@ export class WeatherService {
   static APPID = '5a4b2d457ecbef9eb2a71e480b947604';
   static ICON_URL = 'https://raw.githubusercontent.com/udacity/Sunshine-Version-2/sunshine_master/app/src/main/res/drawable-hdpi/';
   private currentConditions = signal<ConditionsAndZip[]>([]);
-  public dataWeather:BehaviorSubject<weatherDataBeSubject|any>=new BehaviorSubject([])
+  public dataWeather:BehaviorSubject<weatherDataBeSubject|{}>=new BehaviorSubject([])
 
   
   constructor(private http: HttpClient, private cacheService: CachedDataService) { }
@@ -80,7 +80,7 @@ export class WeatherService {
     }
   }
 
-  getWeatherIcon(id): string {
+  getWeatherIcon(id:number): string {
     if (id >= 200 && id <= 232)
       return WeatherService.ICON_URL + "art_storm.png";
     else if (id >= 501 && id <= 511)

@@ -1,7 +1,7 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, EventEmitter, Input, OnInit, Output, Signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ConditionsAndZip } from 'app/conditions-and-zip.type';
+
 import { Forecast } from 'app/forecasts-list/forecast.type';
 import { LocationService } from 'app/location.service';
 import { tabs } from 'app/model.interface';
@@ -23,7 +23,7 @@ export class TabsComponent implements OnInit {
 
 
 
-  @Input() tabs: any[] = [];
+  @Input() tabs: tabs[] = [];
   @Input() selectedIndex: number=0;
   @Input() removeTabIndex:number
 
@@ -41,7 +41,7 @@ export class TabsComponent implements OnInit {
 
   
 
-  selectTab(data:tabs,index) {
+  selectTab(data:tabs,index:number) {
     // console.log("Selected tab",data)
     // this.selectedIndex=index
     // this.selectedIndex = data;

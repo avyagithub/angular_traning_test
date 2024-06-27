@@ -1,8 +1,9 @@
 import { AfterContentChecked, Component, inject, Input, Signal } from '@angular/core';
 import { WeatherService } from "../weather.service";
-import { LocationService } from "../location.service";
+import { LocationService } from "../location.service"; 
 import { Router } from "@angular/router";
 import { ConditionsAndZip } from '../conditions-and-zip.type';
+import { weatherDataBeSubject } from 'app/model.interface';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class CurrentConditionsComponent implements AfterContentChecked {
   protected locationService = inject(LocationService);
   protected currentConditionsByZip: Signal<ConditionsAndZip[]> = this.weatherService.getCurrentConditions();
 
-  displayContent = [];
+  displayContent:weatherDataBeSubject[] = [];
 
 
 
@@ -45,6 +46,7 @@ export class CurrentConditionsComponent implements AfterContentChecked {
   ngAfterContentChecked(): void {
     this.displayContent = [];
     this.displayContent = this.currentConditionsByZip();
+    console.log("Display Content",this.displayContent)
     this.displayContent = Array.from(new Set(this.displayContent.map(a => a.zip)))
       .map(id => {
         return this.displayContent.find(a => a.zip === id)
